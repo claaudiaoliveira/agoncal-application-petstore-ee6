@@ -9,6 +9,7 @@ import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlTransient;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 /**
@@ -19,6 +20,7 @@ import lombok.Setter;
 
 @Getter
 @Setter
+@NoArgsConstructor
 @Entity
 @NamedQueries({
         @NamedQuery(name = Item.FIND_BY_PRODUCT_ID, query = "SELECT i FROM Item i WHERE i.product.id = :productId"),
@@ -62,9 +64,6 @@ public class Item {
     // ======================================
     // =            Constructors            =
     // ======================================
-
-    public Item() {
-    }
 
     public Item(String name, Float unitCost, String imagePath, Product product, String description) {
         this.name = name;
