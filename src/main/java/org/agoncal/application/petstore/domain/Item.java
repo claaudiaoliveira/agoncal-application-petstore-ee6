@@ -9,6 +9,7 @@ import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlTransient;
 import lombok.Getter;
+import lombok.Setter;
 
 /**
  * @author Antonio Goncalves
@@ -17,6 +18,7 @@ import lombok.Getter;
  */
 
 @Getter
+@Setter
 @Entity
 @NamedQueries({
         @NamedQuery(name = Item.FIND_BY_PRODUCT_ID, query = "SELECT i FROM Item i WHERE i.product.id = :productId"),
@@ -69,31 +71,6 @@ public class Item {
         this.unitCost = unitCost;
         this.imagePath = imagePath;
         this.product = product;
-        this.description = description;
-    }
-
-    // ======================================
-    // =         Getters & setters          =
-    // ======================================
-
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setUnitCost(Float unitCost) {
-        this.unitCost = unitCost;
-    }
-
-    public void setImagePath(String imagePath) {
-        this.imagePath = imagePath;
-    }
-
-    public void setProduct(Product product) {
-        this.product = product;
-    }
-
-    public void setDescription(String description) {
         this.description = description;
     }
 
